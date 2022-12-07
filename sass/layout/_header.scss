@@ -2,8 +2,15 @@
 	@media screen and (max-width: 767px) {
 		padding-top: 10px;
 		padding-bottom: 10px;
+		// align-items: center;
 	}
 }
+
+// .header-containe {
+// 	// display: flex;
+// 	align-items: center;
+// 	// justify-content: space-between;
+// }
 
 .logo {
 	font-family: var(--font-family-accent);
@@ -11,7 +18,7 @@
 	@include font(26px, 1.192, inherit);
 	font-size: 26px;
 	line-height: 1.192;
-
+	align-items: center;
 	margin-right: 93px;
 	justify-content: center;
 
@@ -104,10 +111,6 @@
 }
 
 /* Вкладений блок header contacts */
-
-// .header-contacts {
-// 	display: none;
-// }
 
 .header-contacts {
 	&__list {
