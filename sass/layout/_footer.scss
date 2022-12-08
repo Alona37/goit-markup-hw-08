@@ -5,7 +5,7 @@
 
 .footer-container {
 	display: flex;
-
+	justify-content: center;
 	flex-direction: column;
 	text-align: center;
 
@@ -15,11 +15,11 @@
 	}
 
 	@media screen and (min-width: 1200px) {
-		// flex-wrap: wrap;
-		// align-content: space-between;
-		// justify-content: space-between;
-		// align-items: baseline;
-		justify-content: space-between;
+		flex-direction: row;
+		align-items: baseline;
+		padding-left: 0;
+		padding-right: 0;
+		// padding: 0;
 	}
 }
 
@@ -27,8 +27,15 @@
 	.footer__wrap {
 		display: flex;
 		align-items: baseline;
-		// margin-left: auto;
 		justify-content: space-between;
+	}
+}
+
+.footer__contacts {
+	@media screen and (min-width: 1200px) {
+		text-align: left;
+		margin-right: 94px;
+		// margin-right: auto;
 	}
 }
 
@@ -36,17 +43,20 @@
 	color: var(--main-white);
 	margin-right: 0;
 	padding: 0;
-	// align-items: center;
 
 	@media screen and (min-width: 480px) {
-		font-size: 24px;
-		line-height: calc(28 / 24);
+		@include font(24px, 1.166, 0.03em);
+		font-weight: var(--font-weight-bold);
 	}
 }
 
 .footer-address {
 	margin-top: 28px;
 	margin-bottom: 60px;
+
+	@media screen and (min-width: 1200px) {
+		margin-bottom: 0;
+	}
 
 	&__item:nth-child(n + 2) {
 		margin-top: 12px;
@@ -77,6 +87,10 @@
 .footer-socials {
 	margin-bottom: 60px;
 
+	@media screen and (min-width: 1200px) {
+		text-align: left;
+	}
+
 	&__subtitle {
 		@include font(14px, 1.143, inherit);
 		text-transform: uppercase;
@@ -93,29 +107,35 @@
 /* Форма для підвала */
 
 .footer-form {
-	width: 100%;
-	// display: inline-block;
+	display: inline-block;
 	text-transform: uppercase;
 	font-weight: 700;
 	color: var(--main-white);
 
-	@media screen and (min-width: 768px) {
-		margin-left: 83px;
-	}
-
 	@media screen and (min-width: 1200px) {
-		margin-left: 93px;
+		margin-left: 94px;
+		// margin-left: auto;
+		// margin-bottom: 20px;
 		display: flex;
-		justify-content: space-between;
+		flex-direction: column;
+		align-items: baseline;
 	}
 
 	&__title {
 		margin-bottom: 20px;
 		text-transform: uppercase;
+		text-align: center;
+
+		@media screen and (min-width: 1200px) {
+			text-align: left;
+		}
 	}
-	@media screen and (min-width: 1200px) {
-		display: flex;
-		align-items: baseline;
+
+	&__item {
+		@media screen and (min-width: 1200px) {
+			display: flex;
+			align-items: baseline;
+		}
 	}
 
 	&__field {
@@ -128,9 +148,14 @@
 		background-color: #2f303a;
 		color: rgba(255, 255, 255, 0.6);
 		outline: none;
-	}
-	@media screen and (min-width: 1200px) {
-		justify-content: space-between;
+
+		@media screen and (min-width: 768px) {
+			width: 450px;
+		}
+
+		@media screen and (min-width: 1200px) {
+			width: 358px;
+		}
 	}
 
 	&__field::placeholder {
@@ -138,14 +163,6 @@
 		font-weight: 400;
 		font-size: 16px;
 		line-height: 1.25;
-	}
-
-	@media screen and (min-width: 768px) {
-		width: 450px;
-	}
-
-	@media screen and (min-width: 1200px) {
-		width: 358px;
 	}
 
 	&__field:focus {
@@ -158,11 +175,16 @@
 		position: relative;
 		padding: 8px 62px 8px 28px;
 		margin-top: 20px;
-	}
 
-	&__btn:hover .footer-form__icon,
-	&__btn:focus .footer-form__icon {
-		fill: var(--main-black);
+		@media screen and (min-width: 1200px) {
+			margin-top: 0;
+			margin-left: 12px;
+		}
+
+		&__btn:hover .footer-form__icon,
+		&__btn:focus .footer-form__icon {
+			fill: var(--main-black);
+		}
 	}
 
 	&__icon {
@@ -170,7 +192,7 @@
 		fill: var(--main-white);
 		left: 148px;
 		top: 13px;
-		// @include transition(fill);
-		transition: fill var(--common-anim-time) var(--common-cubic-bezier);
+		@include transition(fill);
+		// transition: fill var(--common-anim-time) var(--common-cubic-bezier);
 	}
 }
