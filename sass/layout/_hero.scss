@@ -64,7 +64,10 @@
 		text-align: center;
 		margin: 0 auto;
 		@include font(26px, 1.615, 0.06em);
-		// width: 360px;
+
+		@media screen and (min-width: 768px) {
+			width: 360px;
+		}
 
 		@media screen and (min-width: 1200px) {
 			font-size: 44px;
