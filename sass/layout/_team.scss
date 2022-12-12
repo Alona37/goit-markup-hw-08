@@ -4,8 +4,12 @@
 }
 
 .title {
-	@media screen and (max-width: 480px) {
-		margin-bottom: 30px;
+	@include font(28px, inherit, inherit);
+	margin-bottom: 30px;
+
+	@media screen and (min-width: 1200px) {
+		@include font(36px, 1.167, inherit);
+		margin-bottom: 50px;
 	}
 }
 
@@ -19,9 +23,9 @@
 	}
 
 	&__card {
+		margin-bottom: 30px;
 		background-color: var(--main-white);
 		list-style: none;
-		margin-bottom: 30px;
 
 		@media screen and (min-width: 768px) {
 			width: calc((100% - 60px * 2 - 1)) / 2;
@@ -36,15 +40,8 @@
 	}
 
 	&__image {
-		@media screen and (max-width: 480px) {
-			height: 460px;
-			width: 100%;
-		}
-
-		@media screen and (min-width: 480px) {
-			width: 450px;
-			height: 460px;
-		}
+		width: 450px;
+		height: 460px;
 
 		@media screen and (min-width: 768px) {
 			width: 354px;
@@ -59,12 +56,16 @@
 
 	&__desk {
 		padding-top: 30px;
-		padding-bottom: 30px;
+		padding-bottom: 24px;
 		border-top: none;
 		border-bottom-right-radius: 4px;
 		border-bottom-left-radius: 4px;
 		box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
 			0px 2px 1px rgba(0, 0, 0, 0.2);
+
+		@media screen and (min-width: 1200px) {
+			padding-bottom: 30px;
+		}
 	}
 
 	&__members {
@@ -83,7 +84,6 @@
 	&__socials {
 		display: flex;
 		justify-content: center;
-		align-items: center;
 		gap: 10px;
 	}
 

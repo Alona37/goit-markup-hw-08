@@ -19,7 +19,6 @@
 		align-items: baseline;
 		padding-left: 0;
 		padding-right: 0;
-		// padding: 0;
 	}
 }
 
@@ -35,7 +34,6 @@
 	@media screen and (min-width: 1200px) {
 		text-align: left;
 		margin-right: 94px;
-		// margin-right: auto;
 	}
 }
 
@@ -43,10 +41,11 @@
 	color: var(--main-white);
 	margin-right: 0;
 	padding: 0;
+	@include font(24px, 1.166, inherit);
+	font-weight: var(--font-weight-bold);
 
-	@media screen and (min-width: 480px) {
-		@include font(24px, 1.166, 0.03em);
-		font-weight: var(--font-weight-bold);
+	@media screen and (min-width: 1200px) {
+		@include font(26px, 1.192, inherit);
 	}
 }
 
@@ -63,7 +62,8 @@
 	}
 
 	&__city {
-		line-height: 1.71;
+		@include font(inherit, 1.142, inherit);
+		font-weight: 400;
 		font-style: normal;
 		color: var(--main-white);
 	}
@@ -71,8 +71,9 @@
 	&__contacts {
 		color: rgba(255, 255, 255, 0.6);
 		font-style: normal;
-		line-height: 1.71;
-		text-align: left;
+		font-weight: 400;
+		@include font(inherit, 1.142, inherit);
+		// text-align: left;
 		transition: color var(--common-anim-time) var(--common-cubic-bezier);
 	}
 
@@ -86,6 +87,10 @@
 
 .footer-socials {
 	margin-bottom: 60px;
+
+	@media screen and (min-width: 768px) {
+		margin-bottom: 0;
+	}
 
 	@media screen and (min-width: 1200px) {
 		text-align: left;
@@ -114,8 +119,6 @@
 
 	@media screen and (min-width: 1200px) {
 		margin-left: 94px;
-		// margin-left: auto;
-		// margin-bottom: 20px;
 		display: flex;
 		flex-direction: column;
 		align-items: baseline;
@@ -126,9 +129,9 @@
 		text-transform: uppercase;
 		text-align: center;
 
-		@media screen and (min-width: 1200px) {
-			text-align: left;
-		}
+		// @media screen and (min-width: 1200px) {
+		// 	text-align: left;
+		// }
 	}
 
 	&__item {
@@ -142,7 +145,7 @@
 		width: 100%;
 		padding: 14px 16px;
 		border: 1px solid rgba(255, 255, 255, 0.3);
-		@include font(inherit, 1.25, inherit);
+		@include font(16px, 1.25, inherit);
 		font-weight: 400;
 		border-radius: 4px;
 		background-color: #2f303a;
@@ -181,8 +184,8 @@
 			margin-left: 12px;
 		}
 
-		&__btn:hover .footer-form__icon,
-		&__btn:focus .footer-form__icon {
+		&:hover .footer-form__icon,
+		&:focus .footer-form__icon {
 			fill: var(--main-black);
 		}
 	}

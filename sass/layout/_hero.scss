@@ -1,49 +1,59 @@
 .hero {
+	// Phone
+
 	text-align: center;
 	background: #2f303a;
 	background-repeat: no-repeat;
 	background-position: center;
 	margin: 0 auto;
+	padding: 118px 0;
+	background-size: cover;
+	background-image: linear-gradient(
+			to right,
+			rgba(47, 48, 58, 0.4),
+			rgba(47, 48, 58, 0.4)
+		),
+		url(../images/hero/bg_mob@1x.jpg);
 
-	@media screen and (max-width: 767px) {
-		background-image: linear-gradient(
-				to right,
-				rgba(47, 48, 58, 0.4),
-				rgba(47, 48, 58, 0.4)
-			),
-			url(../images/hero/hero-bg-m.jpg);
-		padding: 118px 0;
+	@media (min-device-pixel-ratio: 2),
+		(min-resolution: 192dpi),
+		(min-resolution: 2dppx) {
+		background-image: url(../images/hero/bg_mob@2x.jpg);
 	}
 
-	// @media screen and (min-width: 480px) {
-	// 	background-image: linear-gradient(
-	// 			to right,
-	// 			rgba(47, 48, 58, 0.4),
-	// 			rgba(47, 48, 58, 0.4)
-	// 		),
-	// 		url(../images/hero/hero-bg-m.jpg);
-	// 	padding: 118px 0;
-	// }
+	// Tablet
 
-	@media screen and (max-width: 1199px) {
+	@media screen and (min-width: 481px) {
 		background-image: linear-gradient(
 				to right,
 				rgba(47, 48, 58, 0.4),
 				rgba(47, 48, 58, 0.4)
 			),
-			url(../images/hero/hero-bg-t.jpg);
-		padding: 118px 0;
+			url(../images/hero/bg_tabl@1x.jpg);
+
+		@media (min-device-pixel-ratio: 2),
+			(min-resolution: 192dpi),
+			(min-resolution: 2dppx) {
+			background-image: url(../images/hero/bg_tabl@2x.jpg);
+		}
 	}
 
-	@media screen and (max-width: 1600px) {
-		background-image: linear-gradient(
-				to right,
-				rgba(47, 48, 58, 0.4),
-				rgba(47, 48, 58, 0.4)
-			),
-			url(../images/hero/hero-bg-l.jpg);
+	// Desktop
+
+	@media screen and (min-width: 769px) {
 		padding: 200px 0;
-		max-width: 1600px;
+		background-image: linear-gradient(
+				to right,
+				rgba(47, 48, 58, 0.4),
+				rgba(47, 48, 58, 0.4)
+			),
+			url(../images/hero/bg_desk@1x.jpg);
+
+		@media (min-device-pixel-ratio: 2),
+			(min-resolution: 192dpi),
+			(min-resolution: 2dppx) {
+			background-image: url(../images/hero/bg_desk@2x.jpg);
+		}
 	}
 
 	&__headline {
@@ -53,19 +63,10 @@
 		letter-spacing: 0.06em;
 		text-align: center;
 		margin: 0 auto;
+		@include font(26px, 1.615, 0.06em);
+		// width: 360px;
 
-		@media screen and (max-width: 767px) {
-			font-size: 26px;
-			line-height: 1.62;
-			width: 360px;
-		}
-		@media screen and (min-width: 768px) {
-			font-size: 26px;
-			line-height: 1.62;
-			width: 360px;
-		}
 		@media screen and (min-width: 1200px) {
-			max-width: 1600px;
 			font-size: 44px;
 			line-height: 1.36;
 			width: 696px;
@@ -75,6 +76,6 @@
 	&__btn {
 		@extend %btn;
 		margin-top: 30px;
-		padding: 10px 32px;
+		padding: 10px 24px;
 	}
 }
