@@ -41,7 +41,11 @@
 
 	&__image {
 		width: 450px;
-		height: 460px;
+		height: 100%;
+
+		@media screen and (min-width: 480px) {
+			height: 460px;
+		}
 
 		@media screen and (min-width: 768px) {
 			width: 354px;

@@ -18,7 +18,12 @@
 	@media (min-device-pixel-ratio: 2),
 		(min-resolution: 192dpi),
 		(min-resolution: 2dppx) {
-		background-image: url(../images/hero/bg_mob@2x.jpg);
+		background-image: linear-gradient(
+				to right,
+				rgba(47, 48, 58, 0.4),
+				rgba(47, 48, 58, 0.4)
+			),
+			url(../images/hero/bg_mob@2x.jpg);
 	}
 
 	// Tablet
@@ -34,13 +39,19 @@
 		@media (min-device-pixel-ratio: 2),
 			(min-resolution: 192dpi),
 			(min-resolution: 2dppx) {
-			background-image: url(../images/hero/bg_tabl@2x.jpg);
+			background-image: linear-gradient(
+					to right,
+					rgba(47, 48, 58, 0.4),
+					rgba(47, 48, 58, 0.4)
+				),
+				url(../images/hero/bg_tabl@2x.jpg);
 		}
 	}
 
 	// Desktop
 
 	@media screen and (min-width: 769px) {
+		max-width: 1600px;
 		padding: 200px 0;
 		background-image: linear-gradient(
 				to right,
@@ -52,7 +63,12 @@
 		@media (min-device-pixel-ratio: 2),
 			(min-resolution: 192dpi),
 			(min-resolution: 2dppx) {
-			background-image: url(../images/hero/bg_desk@2x.jpg);
+			background-image: linear-gradient(
+					to right,
+					rgba(47, 48, 58, 0.4),
+					rgba(47, 48, 58, 0.4)
+				),
+				url(../images/hero/bg_desk@2x.jpg);
 		}
 	}
 
